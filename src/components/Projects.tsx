@@ -1,87 +1,143 @@
 
+import { useEffect, useRef } from 'react';
+import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
+
 const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       title: "NIFTY/BANKNIFTY Price Movement Predictor",
       description: "A machine learning-based system predicting price movements of NIFTY 50 and BANKNIFTY using historical data, sentiment analysis, and technical indicators. Features LSTM, XGBoost, Prophet models, with deployment options like Streamlit dashboard, FastAPI REST API, and Telegram bot notifications.",
-      technologies: ["Python", "LSTM", "XGBoost", "Prophet", "Streamlit", "FastAPI", "Telegram Bot"],
-      featured: true
+      tech: ["Python", "LSTM", "XGBoost", "Streamlit", "FastAPI"],
+      icon: <Brain className="h-6 w-6" />,
+      featured: true,
+      category: "Machine Learning"
     },
     {
       title: "AI Text Detector",
       description: "An NLP project detecting AI-generated vs. human-written text using logistic regression, decision trees, and neural networks. Aims to support educators, researchers, and content creators.",
-      technologies: ["Python", "NLP", "Logistic Regression", "Decision Trees", "Neural Networks"],
-      featured: true
+      tech: ["Python", "NLP", "TensorFlow", "Scikit-learn"],
+      icon: <Code className="h-6 w-6" />,
+      featured: false,
+      category: "AI/ML"
     },
     {
       title: "EcoStride",
       description: "A mobile app built with Android Studio that helps users track and reduce their carbon footprint. Features eco-tips, goal tracking, and daily challenges to promote sustainable living.",
-      technologies: ["Android Studio", "Java", "Mobile Development", "UI/UX"],
-      featured: true
+      tech: ["Android Studio", "Java", "SQLite", "Firebase"],
+      icon: <Smartphone className="h-6 w-6" />,
+      featured: false,
+      category: "Mobile Development"
     }
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-16">Featured Projects</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
-                    {project.featured && (
-                      <span className="bg-gradient-to-r from-blue-500 to-teal-600 text-white px-2 py-1 rounded-full text-xs font-medium">
-                        Featured
-                      </span>
-                    )}
+        <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
+            Things I've Worked on, Some of Them
+          </h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+            A collection of projects that showcase my skills in software development, machine learning, and mobile app development
+          </p>
+        </div>
+
+        <div className="grid gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out ${
+                project.featured ? 'lg:grid-cols-2' : ''
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 overflow-hidden ${
+                project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'
+              }`}>
+                {project.featured && (
+                  <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <span className="text-xs font-medium text-primary mb-2 block">Featured Project</span>
+                      <div className="w-32 h-32 mx-auto bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mb-4 border-2 border-primary/20">
+                        <div className="text-4xl">{project.icon}</div>
+                      </div>
+                      <span className="text-sm text-muted-foreground">{project.category}</span>
+                    </div>
                   </div>
+                )}
+                
+                <div className={project.featured ? 'p-8' : ''}>
+                  {!project.featured && (
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="p-3 bg-primary/10 rounded-lg">
+                        {project.icon}
+                      </div>
+                      <div className="flex gap-2">
+                        <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
+                          <Github className="h-5 w-5 text-muted-foreground" />
+                        </button>
+                        <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
+                          <ExternalLink className="h-5 w-5 text-muted-foreground" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
                   
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground leading-relaxed mb-6">
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
                         key={techIndex}
-                        className="bg-secondary text-secondary-foreground px-2 py-1 rounded text-xs font-medium"
+                        className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
+                  
+                  {project.featured && (
+                    <div className="flex gap-4">
+                      <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+                        <Github className="h-4 w-4" />
+                        View Code
+                      </button>
+                      <button className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-secondary transition-colors">
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Services Section */}
-          <div className="mt-20">
-            <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Services & Expertise</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                "Software Development",
-                "ML Engineering", 
-                "Data Analysis",
-                "Full-Stack Development",
-                "Data Engineering",
-                "DevOps",
-                "Technical Product Management",
-                "AI Engineering",
-                "BI Analysis",
-                "Cloud Engineering",
-                "Systems Analysis"
-              ].map((service, index) => (
-                <div key={index} className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-4 text-center border border-border hover:shadow-md transition-shadow duration-200">
-                  <span className="text-foreground font-medium">{service}</span>
-                </div>
-              ))}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
