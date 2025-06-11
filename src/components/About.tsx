@@ -82,9 +82,11 @@ const About = () => {
             >
               <div className="relative">
                 <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg border-4 border-background shadow-2xl overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-teal-600/10 flex items-center justify-center">
-                    <div className="text-6xl font-bold text-primary">S</div>
-                  </div>
+                  <img 
+                    src="https://i.postimg.cc/gkcBtRgD/DSC04218.jpg" 
+                    alt="Suyashi Singh"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
                 <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-400 rounded-full animate-bounce"></div>
