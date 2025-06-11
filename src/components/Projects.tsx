@@ -1,57 +1,44 @@
-
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
-
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
-
+    elements?.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  const projects = [
-    {
-      title: "NIFTY/BANKNIFTY Price Movement Predictor",
-      description: "A machine learning-based system predicting price movements of NIFTY 50 and BANKNIFTY using historical data, sentiment analysis, and technical indicators. Features LSTM, XGBoost, Prophet models, with deployment options like Streamlit dashboard, FastAPI REST API, and Telegram bot notifications.",
-      tech: ["Python", "LSTM", "XGBoost", "Streamlit", "FastAPI"],
-      icon: <Brain className="h-6 w-6" />,
-      featured: true,
-      category: "Machine Learning"
-    },
-    {
-      title: "AI Text Detector",
-      description: "An NLP project detecting AI-generated vs. human-written text using logistic regression, decision trees, and neural networks. Aims to support educators, researchers, and content creators.",
-      tech: ["Python", "NLP", "TensorFlow", "Scikit-learn"],
-      icon: <Code className="h-6 w-6" />,
-      featured: false,
-      category: "AI/ML"
-    },
-    {
-      title: "EcoStride",
-      description: "A mobile app built with Android Studio that helps users track and reduce their carbon footprint. Features eco-tips, goal tracking, and daily challenges to promote sustainable living.",
-      tech: ["Android Studio", "Java", "SQLite", "Firebase"],
-      icon: <Smartphone className="h-6 w-6" />,
-      featured: false,
-      category: "Mobile Development"
-    }
-  ];
-
-  return (
-    <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10">
+  const projects = [{
+    title: "NIFTY/BANKNIFTY Price Movement Predictor",
+    description: "A machine learning-based system predicting price movements of NIFTY 50 and BANKNIFTY using historical data, sentiment analysis, and technical indicators. Features LSTM, XGBoost, Prophet models, with deployment options like Streamlit dashboard, FastAPI REST API, and Telegram bot notifications.",
+    tech: ["Python", "LSTM", "XGBoost", "Streamlit", "FastAPI"],
+    icon: <Brain className="h-6 w-6" />,
+    featured: true,
+    category: "Machine Learning"
+  }, {
+    title: "AI Text Detector",
+    description: "An NLP project detecting AI-generated vs. human-written text using logistic regression, decision trees, and neural networks. Aims to support educators, researchers, and content creators.",
+    tech: ["Python", "NLP", "TensorFlow", "Scikit-learn"],
+    icon: <Code className="h-6 w-6" />,
+    featured: false,
+    category: "AI/ML"
+  }, {
+    title: "EcoStride",
+    description: "A mobile app built with Android Studio that helps users track and reduce their carbon footprint. Features eco-tips, goal tracking, and daily challenges to promote sustainable living.",
+    tech: ["Android Studio", "Java", "SQLite", "Firebase"],
+    icon: <Smartphone className="h-6 w-6" />,
+    featured: false,
+    category: "Mobile Development"
+  }];
+  return <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10">
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
@@ -63,32 +50,14 @@ const Projects = () => {
         </div>
 
         <div className="grid gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out ${
-                project.featured ? 'lg:grid-cols-2' : ''
-              }`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 overflow-hidden ${
-                project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'
-              }`}>
-                {project.featured && (
-                  <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <span className="text-xs font-medium text-primary mb-2 block">Featured Project</span>
-                      <div className="w-32 h-32 mx-auto bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center mb-4 border-2 border-primary/20">
-                        <div className="text-4xl">{project.icon}</div>
-                      </div>
-                      <span className="text-sm text-muted-foreground">{project.category}</span>
-                    </div>
-                  </div>
-                )}
+          {projects.map((project, index) => <div key={index} className={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out ${project.featured ? 'lg:grid-cols-2' : ''}`} style={{
+          transitionDelay: `${index * 200}ms`
+        }}>
+              <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 overflow-hidden ${project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'}`}>
+                {project.featured}
                 
                 <div className={project.featured ? 'p-8' : ''}>
-                  {!project.featured && (
-                    <div className="flex items-start justify-between mb-6">
+                  {!project.featured && <div className="flex items-start justify-between mb-6">
                       <div className="p-3 bg-primary/10 rounded-lg">
                         {project.icon}
                       </div>
@@ -100,8 +69,7 @@ const Projects = () => {
                           <ExternalLink className="h-5 w-5 text-muted-foreground" />
                         </button>
                       </div>
-                    </div>
-                  )}
+                    </div>}
                   
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {project.title}
@@ -112,18 +80,12 @@ const Projects = () => {
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full"
-                      >
+                    {project.tech.map((tech, techIndex) => <span key={techIndex} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">
                         {tech}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
                   
-                  {project.featured && (
-                    <div className="flex gap-4">
+                  {project.featured && <div className="flex gap-4">
                       <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
                         <Github className="h-4 w-4" />
                         View Code
@@ -132,16 +94,12 @@ const Projects = () => {
                         <ExternalLink className="h-4 w-4" />
                         Live Demo
                       </button>
-                    </div>
-                  )}
+                    </div>}
                 </div>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Projects;
