@@ -42,12 +42,7 @@ const About = () => {
             </div>
 
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400">
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Having successfully delivered projects to satisfied clients worldwide, I've gained 
-                valuable experience collaborating with individuals from various cultures. My journey 
-                has taken me from local software development to working with international teams, 
-                eventually leading me to work with companies across different domains.
-              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">As I look ahead to my professional journey, I'm eager to contribute to innovative projects, expand my skills, and collaborate with teams that value creativity and growth. I thrive in dynamic environments that challenge me to think critically and push boundaries, and I’m always excited to learn from new experiences.</p>
             </div>
 
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600">
