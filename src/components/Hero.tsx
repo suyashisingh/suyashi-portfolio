@@ -30,8 +30,12 @@ const Hero = () => {
           {/* Profile Picture */}
           <div className="mb-8 flex justify-start">
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-teal-600 p-1">
-              <div className="w-full h-full rounded-full bg-muted flex items-center justify-center text-2xl font-bold text-primary">
-                S
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img 
+                  src="https://i.postimg.cc/gkcBtRgD/DSC04218.jpg" 
+                  alt="Suyashi Singh"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
