@@ -24,28 +24,52 @@ const Certifications = () => {
 
   const certifications = [
     {
-      title: "Your Certificate Title",
-      issuer: "Issuing Organization",
-      date: "Month Year", // e.g., "Dec 2024"
-      status: "No Expiration Date", // or "Expires Month Year"
-      icon: "🏆", // Choose any emoji or use a relevant icon
-      color: "from-blue-500 to-purple-600" // Tailwind gradient colors
+      title: "Introduction to Artificial Intelligence",
+      issuer: "Infosys Springboard",
+      date: "Jun 2025",
+      status: "No Expiration Date",
+      icon: "🤖",
+      color: "from-blue-500 to-purple-600"
     },
     {
-      title: "Another Certificate",
-      issuer: "Another Organization",
-      date: "Nov 2024",
+      title: "PostgreSQL Developer",
+      issuer: "Infosys Springboard",
+      date: "May 2025",
       status: "No Expiration Date",
-      icon: "🎓",
+      icon: "🐘",
+      color: "from-blue-600 to-indigo-600"
+    },
+    {
+      title: "Digital Marketing Analytics in Practice",
+      issuer: "University of Illinois Urbana-Champaign",
+      date: "Apr 2025",
+      status: "No Expiration Date",
+      icon: "📊",
       color: "from-green-500 to-blue-500"
     },
     {
-      title: "Third Certificate",
-      issuer: "Third Organization", 
-      date: "Oct 2024",
-      status: "Expires Dec 2026",
-      icon: "⚡",
-      color: "from-yellow-500 to-red-500"
+      title: "Digital Marketing Analytics in Theory",
+      issuer: "University of Illinois Urbana-Champaign",
+      date: "Apr 2025",
+      status: "No Expiration Date",
+      icon: "📈",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Marketing in a Digital World",
+      issuer: "University of Illinois Urbana-Champaign",
+      date: "Apr 2025",
+      status: "No Expiration Date",
+      icon: "🌐",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      title: "Google Cloud Computing Foundations Certificate",
+      issuer: "Google",
+      date: "Jun 2024",
+      status: "No Expiration Date",
+      icon: "☁️",
+      color: "from-yellow-500 to-orange-500"
     }
   ];
 
