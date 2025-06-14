@@ -1,9 +1,10 @@
+
 import { useEffect, useRef } from 'react';
 import DecorativeWheel from "./DecorativeWheel";
 
 const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const wheelRef = useRef<HTMLDivElement>(null);
+  const wheelWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,10 +26,10 @@ const Experience = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (wheelRef.current) {
+      if (wheelWrapperRef.current) {
         const scrolled = window.pageYOffset;
         const rotation = scrolled * 0.2;
-        wheelRef.current.style.transform = `rotate(${rotation}deg)`;
+        wheelWrapperRef.current.style.transform = `rotate(${rotation}deg)`;
       }
     };
 
@@ -65,19 +66,15 @@ const Experience = () => {
 
   return (
     <section ref={sectionRef} id="experience" className="py-20 bg-gradient-to-b from-secondary/10 to-background relative overflow-hidden">
-      {/* Larger animated steering wheel */}
-      <DecorativeWheel
-        size={260}
-        opacity={12}
-        className="top-12 right-10 md:right-24"
-        // Optionally replace animation logic here if needed
-        style={wheelRef.current ? { transform: wheelRef.current.style.transform } : {}}
-      />
-      {/* 
-        If legacy animated rotation logic is needed for this wheel,
-        you can optionally sync DecorativeWheel's rotation via props & style.
-        For simplicity, the above will be a static decorative wheel.
-      */}
+      {/* Larger animated steering wheel (now wrapped for rotation) */}
+      <div
+        ref={wheelWrapperRef}
+        className="absolute top-12 right-10 md:right-24 z-0 pointer-events-none"
+        style={{ transition: 'transform 0.2s linear' }}
+        aria-hidden="true"
+      >
+        <DecorativeWheel size={320} opacity={13} />
+      </div>
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">

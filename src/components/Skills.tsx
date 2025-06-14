@@ -1,3 +1,6 @@
+
+import DecorativeWheel from "./DecorativeWheel";
+
 const Skills = () => {
   const technicalSkills = {
     "Languages": ["C++", "Python", "Java", "C", "JavaScript", "TypeScript"],
@@ -9,8 +12,6 @@ const Skills = () => {
   const coursework = [
     "Coding", "Web Development", "Networking", "Database Management", "Machine Learning"
   ];
-
-  import DecorativeWheel from "./DecorativeWheel";
 
   return (
     <section id="skills" className="py-20 bg-secondary/5 relative overflow-hidden">
