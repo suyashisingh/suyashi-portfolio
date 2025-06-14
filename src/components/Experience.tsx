@@ -42,21 +42,21 @@ const Experience = () => {
       role: "Campus Ambassador",
       period: "December 2024 – Present",
       description: "Representing Cisco on campus, fostering student engagement, and promoting technology-driven initiatives.",
-      icon: "🌐"
+      logo: "/lovable-uploads/737e76f8-0be6-4c49-9066-00dcf831c183.png"
     },
     {
       company: "HashStudioz",
       role: "Machine Learning Engineer Intern",
       period: "Summer 2025",
       description: "Developing stock market prediction models using data preprocessing, model training, and evaluation.",
-      icon: "🤖"
+      logo: "/lovable-uploads/e9db56a4-4ad8-4259-87eb-5d49e5b549a3.png"
     },
     {
       company: "ONGC",
       role: "Project ICE Intern",
       period: "Summer 2024",
       description: "Worked with ABAP SAP and BTP to enhance system workflows and collaborate with cross-functional teams.",
-      icon: "⚡"
+      logo: "/lovable-uploads/2570e833-d1ec-463c-a7fa-2f766a6a4504.png"
     }
   ];
 
@@ -91,8 +91,12 @@ const Experience = () => {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="flex items-start space-x-6">
-                <div className="text-4xl bg-primary/10 p-4 rounded-xl">
-                  {exp.icon}
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-2 shadow-md">
+                  <img 
+                    src={exp.logo} 
+                    alt={`${exp.company} logo`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
