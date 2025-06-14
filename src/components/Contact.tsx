@@ -3,6 +3,7 @@ import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useToast } from '@/hooks/use-toast';
 import DecorativeWheel from "./DecorativeWheel";
+import RotatingWheel from "./RotatingWheel";
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -73,7 +74,7 @@ const Contact = () => {
       className="py-20 bg-gradient-to-t from-primary/5 to-background relative overflow-hidden"
     >
       {/* Decorative faded wheel, bottom left */}
-      <DecorativeWheel size={180} opacity={11} className="bottom-8 left-6 md:bottom-16 md:left-24" />
+      <RotatingWheel size={180} opacity={11} className="bottom-8 left-6 md:bottom-16 md:left-24" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 text-center">
