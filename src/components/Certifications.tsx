@@ -1,8 +1,6 @@
 
 import { useEffect, useRef } from 'react';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
-import RotatingWheel from "./RotatingWheel";
-import SectionWrapper from "./SectionWrapper";
 
 const Certifications = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -79,9 +77,7 @@ const Certifications = () => {
   ];
 
   return (
-    <SectionWrapper id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
-      {/* Decorative faded wheel, bottom right, now animated */}
-      <RotatingWheel size={170} opacity={9} className="bottom-9 right-6 md:bottom-16 md:right-16" />
+    <section ref={sectionRef} id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
@@ -91,37 +87,41 @@ const Certifications = () => {
             Continuous learning and professional development through industry-recognized certifications
           </p>
         </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out group hover-scale transition"
+              className={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out group`}
               style={{ transitionDelay: `${index * 100}ms` }}
-              data-tooltip={cert.issuer}
             >
               <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 h-full">
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 ${cert.isInfosys ? 'p-1' : 'p-2'} hover-scale transition`} data-tooltip={cert.issuer + " logo"}>
-                    <img
-                      src={cert.logo}
+                  <div className={`w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 ${cert.isInfosys ? 'p-1' : 'p-2'}`}>
+                    <img 
+                      src={cert.logo} 
                       alt={`${cert.issuer} logo`}
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 hover:bg-secondary rounded-lg hover-scale transition-colors" data-tooltip="Open">
+                  <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 hover:bg-secondary rounded-lg">
                     <ExternalLink className="h-4 w-4 text-muted-foreground" />
                   </button>
                 </div>
+                
                 <h3 className="font-bold text-lg text-foreground mb-2 line-clamp-2">
                   {cert.title}
                 </h3>
+                
                 <p className="text-primary font-medium mb-3">
                   {cert.issuer}
                 </p>
+                
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                   <Calendar className="h-4 w-4" />
                   <span>Issued {cert.date}</span>
                 </div>
+                
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Award className="h-4 w-4" />
                   <span>{cert.status}</span>
@@ -131,7 +131,7 @@ const Certifications = () => {
           ))}
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 

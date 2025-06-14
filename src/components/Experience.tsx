@@ -1,10 +1,9 @@
+
 import { useEffect, useRef } from 'react';
-import DecorativeWheel from "./DecorativeWheel";
-import SectionWrapper from "./SectionWrapper";
 
 const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const wheelWrapperRef = useRef<HTMLDivElement>(null);
+  const wheelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,10 +25,10 @@ const Experience = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (wheelWrapperRef.current) {
+      if (wheelRef.current) {
         const scrolled = window.pageYOffset;
         const rotation = scrolled * 0.2;
-        wheelWrapperRef.current.style.transform = `rotate(${rotation}deg)`;
+        wheelRef.current.style.transform = `rotate(${rotation}deg)`;
       }
     };
 
@@ -65,16 +64,21 @@ const Experience = () => {
   ];
 
   return (
-    <SectionWrapper id="experience" className="py-20 bg-gradient-to-b from-secondary/10 to-background relative overflow-hidden">
-      {/* Larger animated steering wheel (now wrapped for rotation) */}
-      <div
-        ref={wheelWrapperRef}
-        className="absolute top-12 right-10 md:right-24 z-0 pointer-events-none"
-        style={{ transition: 'transform 0.2s linear' }}
-        aria-hidden="true"
+    <section ref={sectionRef} id="experience" className="py-20 bg-gradient-to-b from-secondary/10 to-background relative overflow-hidden">
+      {/* Animated steering wheel */}
+      <div 
+        ref={wheelRef}
+        className="absolute top-20 right-10 w-32 h-32 opacity-10 pointer-events-none"
       >
-        <DecorativeWheel size={320} opacity={13} />
+        <div className="w-full h-full border-8 border-primary rounded-full relative">
+          <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute top-2 left-1/2 w-1 h-6 bg-primary transform -translate-x-1/2"></div>
+          <div className="absolute bottom-2 left-1/2 w-1 h-6 bg-primary transform -translate-x-1/2"></div>
+          <div className="absolute left-2 top-1/2 w-6 h-1 bg-primary transform -translate-y-1/2"></div>
+          <div className="absolute right-2 top-1/2 w-6 h-1 bg-primary transform -translate-y-1/2"></div>
+        </div>
       </div>
+
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
@@ -86,14 +90,13 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/20 hover:border-primary/20 hover-scale transition group"
+              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/20 hover:border-primary/20 transition-all duration-300"
               style={{ transitionDelay: `${index * 200}ms` }}
-              data-tooltip={exp.company}
             >
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden hover-scale transition" data-tooltip={exp.company + " logo"}>
-                  <img
-                    src={exp.logo}
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={exp.logo} 
                     alt={`${exp.company} logo`}
                     className={exp.logoStyle}
                   />
@@ -121,7 +124,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 
