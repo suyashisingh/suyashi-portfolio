@@ -42,21 +42,24 @@ const Experience = () => {
       role: "Campus Ambassador",
       period: "December 2024 – Present",
       description: "Representing Cisco on campus, fostering student engagement, and promoting technology-driven initiatives.",
-      logo: "/lovable-uploads/737e76f8-0be6-4c49-9066-00dcf831c183.png"
+      logo: "/lovable-uploads/737e76f8-0be6-4c49-9066-00dcf831c183.png",
+      logoStyle: "w-20 h-16 object-contain object-center scale-150"
     },
     {
       company: "HashStudioz",
       role: "Machine Learning Engineer Intern",
       period: "Summer 2025",
       description: "Developing stock market prediction models using data preprocessing, model training, and evaluation.",
-      logo: "/lovable-uploads/e9db56a4-4ad8-4259-87eb-5d49e5b549a3.png"
+      logo: "/lovable-uploads/e9db56a4-4ad8-4259-87eb-5d49e5b549a3.png",
+      logoStyle: "w-20 h-16 object-contain object-center scale-125"
     },
     {
       company: "ONGC",
       role: "Project ICE Intern",
       period: "Summer 2024",
       description: "Worked with ABAP SAP and BTP to enhance system workflows and collaborate with cross-functional teams.",
-      logo: "/lovable-uploads/2570e833-d1ec-463c-a7fa-2f766a6a4504.png"
+      logo: "/lovable-uploads/2570e833-d1ec-463c-a7fa-2f766a6a4504.png",
+      logoStyle: "w-20 h-16 object-contain object-center scale-150"
     }
   ];
 
@@ -91,11 +94,11 @@ const Experience = () => {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-2 shadow-md">
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden">
                   <img 
                     src={exp.logo} 
                     alt={`${exp.company} logo`}
-                    className="w-full h-full object-contain"
+                    className={exp.logoStyle}
                   />
                 </div>
                 <div className="flex-1">
