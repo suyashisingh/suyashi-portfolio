@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
 const Projects = () => {
@@ -85,16 +86,8 @@ const Projects = () => {
                       </span>)}
                   </div>
                   
-                  {project.featured && <div className="flex gap-4">
-                      <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
-                        <Github className="h-4 w-4" />
-                        View Code
-                      </button>
-                      <button className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-secondary transition-colors">
-                        <ExternalLink className="h-4 w-4" />
-                        Live Demo
-                      </button>
-                    </div>}
+                  {/* REMOVE the buttons for featured project */}
+                  {project.featured && null}
                 </div>
               </div>
             </div>)}
