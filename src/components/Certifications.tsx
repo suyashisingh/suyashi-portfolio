@@ -29,7 +29,7 @@ const Certifications = () => {
       issuer: "Google",
       date: "Jun 2024",
       status: "No Expiration Date",
-      logo: "/lovable-uploads/518e2e16-89d9-4ac2-bbbf-6bd21a751c00.png",
+      logo: "/lovable-uploads/7e8fbe9a-0fca-4cb1-8088-64636c6a80b7.png",
       color: "from-yellow-500 to-orange-500"
     },
     {
@@ -38,7 +38,8 @@ const Certifications = () => {
       date: "Jun 2025",
       status: "No Expiration Date",
       logo: "/lovable-uploads/9d1da5db-2d60-4eaf-ac94-56cb382f4c6f.png",
-      color: "from-blue-500 to-purple-600"
+      color: "from-blue-500 to-purple-600",
+      isInfosys: true
     },
     {
       title: "PostgreSQL Developer",
@@ -46,7 +47,8 @@ const Certifications = () => {
       date: "May 2025",
       status: "No Expiration Date",
       logo: "/lovable-uploads/9d1da5db-2d60-4eaf-ac94-56cb382f4c6f.png",
-      color: "from-blue-600 to-indigo-600"
+      color: "from-blue-600 to-indigo-600",
+      isInfosys: true
     },
     {
       title: "Digital Marketing Analytics in Practice",
@@ -95,7 +97,7 @@ const Certifications = () => {
             >
               <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 h-full">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 p-2">
+                  <div className={`w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 ${cert.isInfosys ? 'p-1' : 'p-2'}`}>
                     <img 
                       src={cert.logo} 
                       alt={`${cert.issuer} logo`}
