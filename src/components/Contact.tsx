@@ -1,9 +1,14 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,6 +27,44 @@ const Contact = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (!formRef.current) return;
+    
+    setIsSubmitting(true);
+    
+    try {
+      const result = await emailjs.sendForm(
+        'service_3qw3g58', // Your service ID
+        'template_xo0zewa', // Your template ID
+        formRef.current,
+        '_iHa2oUG5Rs6ew5Xe' // Your public key
+      );
+      
+      console.log('Email sent successfully:', result.text);
+      
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      
+      // Reset form
+      formRef.current.reset();
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      
+      toast({
+        title: "Error sending message",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-gradient-to-t from-primary/5 to-background relative overflow-hidden">
@@ -115,26 +158,30 @@ const Contact = () => {
             <div className="animate-on-scroll opacity-0 translate-x-[50px] transition-all duration-700 ease-out delay-400">
               <h4 className="text-xl font-bold text-foreground mb-8">Send a Message</h4>
               
-              <form className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="user_name" className="block text-sm font-medium text-foreground mb-2">
                     Your Name
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    id="user_name"
+                    name="user_name"
+                    required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="Enter your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="user_email" className="block text-sm font-medium text-foreground mb-2">
                     Your Email
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    id="user_email"
+                    name="user_email"
+                    required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="Enter your email"
                   />
@@ -146,7 +193,9 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
+                    required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
                     placeholder="Enter your message"
                   ></textarea>
@@ -154,10 +203,11 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="h-5 w-5" />
-                  Say Hello
+                  {isSubmitting ? 'Sending...' : 'Say Hello'}
                 </button>
               </form>
             </div>
