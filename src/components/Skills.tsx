@@ -1,4 +1,3 @@
-
 const Skills = () => {
   const technicalSkills = {
     "Languages": ["C++", "Python", "Java", "C", "JavaScript", "TypeScript"],
@@ -11,8 +10,12 @@ const Skills = () => {
     "Coding", "Web Development", "Networking", "Database Management", "Machine Learning"
   ];
 
+  import DecorativeWheel from "./DecorativeWheel";
+
   return (
-    <section id="skills" className="py-20 bg-secondary/5">
+    <section id="skills" className="py-20 bg-secondary/5 relative overflow-hidden">
+      {/* Decorative faded wheel, bottom left */}
+      <DecorativeWheel size={180} opacity={9} className="bottom-8 left-5 md:bottom-16 md:left-16" />
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-16">Skills & Expertise</h2>

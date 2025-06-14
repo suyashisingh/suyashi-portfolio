@@ -1,6 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
+import DecorativeWheel from "./DecorativeWheel";
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -39,7 +39,9 @@ const Projects = () => {
     featured: false,
     category: "Mobile Development"
   }];
-  return <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10">
+  return <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
+      {/* Decorative faded wheel, top left */}
+      <DecorativeWheel size={170} opacity={10} className="top-9 left-6 md:top-16 md:left-16" />
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">

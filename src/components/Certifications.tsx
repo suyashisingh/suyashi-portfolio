@@ -1,6 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
+import DecorativeWheel from "./DecorativeWheel";
 
 const Certifications = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -77,7 +77,9 @@ const Certifications = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+    <section ref={sectionRef} id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+      {/* Decorative faded wheel, bottom right */}
+      <DecorativeWheel size={170} opacity={9} className="bottom-9 right-6 md:bottom-16 md:right-16" />
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">

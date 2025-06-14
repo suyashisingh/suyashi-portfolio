@@ -1,5 +1,5 @@
-
 import { useEffect, useRef } from 'react';
+import DecorativeWheel from "./DecorativeWheel";
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -28,7 +28,9 @@ const About = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <section ref={sectionRef} id="about" className="py-20 bg-gradient-to-b from-background to-secondary/10">
+  return <section ref={sectionRef} id="about" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
+      {/* Decorative faded wheel, top right */}
+      <DecorativeWheel size={180} opacity={10} className="top-10 right-6 md:top-16 md:right-24" />
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
