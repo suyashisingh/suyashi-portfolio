@@ -1,6 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import DecorativeWheel from "./DecorativeWheel";
+import SectionWrapper from "./SectionWrapper";
 
 const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -65,7 +65,7 @@ const Experience = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-gradient-to-b from-secondary/10 to-background relative overflow-hidden">
+    <SectionWrapper id="experience" className="py-20 bg-gradient-to-b from-secondary/10 to-background relative overflow-hidden">
       {/* Larger animated steering wheel (now wrapped for rotation) */}
       <div
         ref={wheelWrapperRef}
@@ -86,13 +86,14 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/20 hover:border-primary/20 transition-all duration-300"
+              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/20 hover:border-primary/20 hover-scale transition group"
               style={{ transitionDelay: `${index * 200}ms` }}
+              data-tooltip={exp.company}
             >
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={exp.logo} 
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden hover-scale transition" data-tooltip={exp.company + " logo"}>
+                  <img
+                    src={exp.logo}
                     alt={`${exp.company} logo`}
                     className={exp.logoStyle}
                   />
@@ -120,7 +121,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

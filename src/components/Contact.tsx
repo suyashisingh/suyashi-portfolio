@@ -4,6 +4,8 @@ import emailjs from '@emailjs/browser';
 import { useToast } from '@/hooks/use-toast';
 import DecorativeWheel from "./DecorativeWheel";
 import RotatingWheel from "./RotatingWheel";
+import ResumeButton from "./ResumeButton";
+import SectionWrapper from "./SectionWrapper";
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -68,15 +70,16 @@ const Contact = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      id="contact"
-      className="py-20 bg-gradient-to-t from-primary/5 to-background relative overflow-hidden"
-    >
+    <SectionWrapper id="contact" className="py-20 bg-gradient-to-br from-primary/5 to-secondary/10 relative overflow-hidden">
       {/* Decorative faded wheel, bottom left */}
       <RotatingWheel size={180} opacity={11} className="bottom-8 left-6 md:bottom-16 md:left-24" />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6">
+        {/* Download Resume Button above form */}
+        <div className="flex justify-center mb-8">
+          <ResumeButton />
+        </div>
+
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 text-center">
           <div className="inline-block p-2 bg-primary/10 rounded-full mb-4">
             <Send className="h-6 w-6 text-primary" />
@@ -238,7 +241,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 
