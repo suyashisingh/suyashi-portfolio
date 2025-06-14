@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
 
@@ -28,7 +29,7 @@ const Certifications = () => {
       issuer: "Google",
       date: "Jun 2024",
       status: "No Expiration Date",
-      icon: "☁️",
+      logo: "/lovable-uploads/518e2e16-89d9-4ac2-bbbf-6bd21a751c00.png",
       color: "from-yellow-500 to-orange-500"
     },
     {
@@ -36,7 +37,7 @@ const Certifications = () => {
       issuer: "Infosys Springboard",
       date: "Jun 2025",
       status: "No Expiration Date",
-      icon: "🤖",
+      logo: "/lovable-uploads/9d1da5db-2d60-4eaf-ac94-56cb382f4c6f.png",
       color: "from-blue-500 to-purple-600"
     },
     {
@@ -44,7 +45,7 @@ const Certifications = () => {
       issuer: "Infosys Springboard",
       date: "May 2025",
       status: "No Expiration Date",
-      icon: "🐘",
+      logo: "/lovable-uploads/9d1da5db-2d60-4eaf-ac94-56cb382f4c6f.png",
       color: "from-blue-600 to-indigo-600"
     },
     {
@@ -52,7 +53,7 @@ const Certifications = () => {
       issuer: "University of Illinois Urbana-Champaign",
       date: "Apr 2025",
       status: "No Expiration Date",
-      icon: "📊",
+      logo: "/lovable-uploads/6ebde67e-9174-4a51-a43f-01086be3aa5f.png",
       color: "from-green-500 to-blue-500"
     },
     {
@@ -60,7 +61,7 @@ const Certifications = () => {
       issuer: "University of Illinois Urbana-Champaign",
       date: "Apr 2025",
       status: "No Expiration Date",
-      icon: "📈",
+      logo: "/lovable-uploads/6ebde67e-9174-4a51-a43f-01086be3aa5f.png",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -68,7 +69,7 @@ const Certifications = () => {
       issuer: "University of Illinois Urbana-Champaign",
       date: "Apr 2025",
       status: "No Expiration Date",
-      icon: "🌐",
+      logo: "/lovable-uploads/6ebde67e-9174-4a51-a43f-01086be3aa5f.png",
       color: "from-orange-500 to-red-500"
     }
   ];
@@ -94,8 +95,12 @@ const Certifications = () => {
             >
               <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 h-full">
                 <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${cert.color} flex items-center justify-center text-2xl mb-4`}>
-                    {cert.icon}
+                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center mb-4 p-2">
+                    <img 
+                      src={cert.logo} 
+                      alt={`${cert.issuer} logo`}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 hover:bg-secondary rounded-lg">
                     <ExternalLink className="h-4 w-4 text-muted-foreground" />
