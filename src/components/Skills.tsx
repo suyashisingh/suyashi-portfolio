@@ -1,3 +1,4 @@
+
 import RotatingWheel from "./RotatingWheel";
 import SectionWrapper from "./SectionWrapper";
 
@@ -15,7 +16,7 @@ const Skills = () => {
 
   return (
     <SectionWrapper id="skills" className="py-20 bg-secondary/5 relative overflow-hidden">
-      {/* Decorative faded wheel, bottom left */}
+      {/* Decorative faded wheel, bottom left, now animated */}
       <RotatingWheel size={180} opacity={9} className="bottom-8 left-5 md:bottom-16 md:left-16" />
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">

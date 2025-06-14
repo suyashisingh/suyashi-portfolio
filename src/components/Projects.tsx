@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
 import RotatingWheel from "./RotatingWheel";
@@ -42,7 +43,7 @@ const Projects = () => {
   }];
   return (
     <SectionWrapper id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
-      {/* Decorative faded wheel, top left */}
+      {/* Decorative faded wheel, top left, now animated */}
       <RotatingWheel size={170} opacity={10} className="top-9 left-6 md:top-16 md:left-16" />
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">

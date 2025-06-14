@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
 import RotatingWheel from "./RotatingWheel";
@@ -79,7 +80,7 @@ const Certifications = () => {
 
   return (
     <SectionWrapper id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
-      {/* Decorative faded wheel, bottom right */}
+      {/* Decorative faded wheel, bottom right, now animated */}
       <RotatingWheel size={170} opacity={9} className="bottom-9 right-6 md:bottom-16 md:right-16" />
       <div className="container mx-auto px-6">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
