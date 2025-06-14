@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 const Experience = () => {
@@ -58,7 +59,7 @@ const Experience = () => {
       period: "Summer 2024",
       description: "Worked with ABAP SAP and BTP to enhance system workflows and collaborate with cross-functional teams.",
       logo: "/lovable-uploads/2570e833-d1ec-463c-a7fa-2f766a6a4504.png",
-      logoStyle: "w-20 h-16 object-contain object-center scale-125"
+      logoStyle: "w-20 h-16 object-contain object-center scale-110"
     }
   ];
 
