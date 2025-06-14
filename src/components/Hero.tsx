@@ -18,7 +18,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
       {/* Cursor Following Circle */}
       <div 
-        className="fixed w-96 h-96 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 opacity-80 pointer-events-none z-10 transition-transform duration-300 ease-out"
+        className="fixed w-96 h-96 rounded-full bg-gradient-to-br from-primary/30 to-primary/20 pointer-events-none z-10 transition-transform duration-300 ease-out"
         style={{
           transform: `translate(${mousePosition.x - 192}px, ${mousePosition.y - 192}px)`,
           filter: 'blur(40px)',
@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Profile Picture */}
           <div className="mb-8 flex justify-start">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-teal-600 p-1">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/80 p-1">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img 
                   src="https://i.postimg.cc/gkcBtRgD/DSC04218.jpg" 
