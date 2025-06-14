@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Github, Linkedin } from 'lucide-react';
 
@@ -53,9 +52,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-              I'm a skilled software developer and ML engineer with experience in building 
-              full-stack applications. My expertise lies in developing applications that 
-              cater to the needs of diverse clients, ensuring efficient and user-friendly solutions.
+              Final year IT student @ MIT Manipal. Passionate about software dev, ML, and full-stack projects. Interested in secure systems, product design, and building meaningful tech experiences.
             </p>
 
             {/* Social Links */}
