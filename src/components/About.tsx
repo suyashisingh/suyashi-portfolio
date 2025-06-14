@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -38,11 +39,11 @@ const About = () => {
             </div>
             
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
-              <p className="text-lg text-primary mb-6 leading-relaxed">Greetings, I’m Suyashi Singh, a final year IT student at Manipal Institute of Technology. With hands-on experience in Software Development, Machine Learning and Full Stack Development, I enjoy tackling real-world challenges. I'm passionate about technology, leadership, and making a positive impact through my work. Let’s connect!</p>
+              <p className="text-lg text-primary mb-6 leading-relaxed">Greetings, I'm Suyashi Singh, a final year IT student at Manipal Institute of Technology. With hands-on experience in Software Development, Machine Learning and Full Stack Development, I enjoy tackling real-world challenges. I'm passionate about technology, leadership, and making a positive impact through my work. Let's connect!</p>
             </div>
 
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400">
-              <p className="text-muted-foreground leading-relaxed mb-6">As I look ahead to my professional journey, I'm eager to contribute to innovative projects, expand my skills, and collaborate with teams that value creativity and growth. I thrive in dynamic environments that challenge me to think critically and push boundaries, and I’m always excited to learn from new experiences.</p>
+              <p className="text-muted-foreground leading-relaxed mb-6">As I look ahead to my professional journey, I'm eager to contribute to innovative projects, expand my skills, and collaborate with teams that value creativity and growth. I thrive in dynamic environments that challenge me to think critically and push boundaries, and I'm always excited to learn from new experiences.</p>
             </div>
 
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out delay-600">
@@ -58,11 +59,11 @@ const About = () => {
           <div className="flex justify-center">
             <div ref={imageRef} className="animate-on-scroll opacity-0 scale-95 transition-all duration-700 ease-out delay-800">
               <div className="relative">
-                <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg border-4 border-background shadow-2xl overflow-hidden">
+                <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg border-4 border-background shadow-2xl overflow-hidden">
                   <img src="https://i.postimg.cc/gkcBtRgD/DSC04218.jpg" alt="Suyashi Singh" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-400 rounded-full animate-bounce"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-bounce"></div>
               </div>
             </div>
           </div>

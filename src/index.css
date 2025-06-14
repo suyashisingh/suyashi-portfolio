@@ -89,45 +89,45 @@
     --sidebar-ring: 220 13% 18%;
     */
 
-    /* FOURTH THEME - Sophisticated Slate Professional */
-    --background: 0 0% 98%;
-    --foreground: 215 25% 27%;
+    /* CURRENT THEME - Vibrant Professional with Colors */
+    --background: 0 0% 99%;
+    --foreground: 220 15% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 220 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 220 15% 20%;
 
-    --primary: 215 20% 65%;
+    --primary: 200 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 95%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 195 100% 95%;
+    --secondary-foreground: 200 100% 25%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 10% 50%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 215 15% 92%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 175 70% 88%;
+    --accent-foreground: 175 100% 25%;
 
-    --destructive: 0 65% 55%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 88%;
-    --input: 215 15% 88%;
-    --ring: 215 20% 65%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 200 100% 45%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 96%;
-    --sidebar-foreground: 215 25% 27%;
-    --sidebar-primary: 215 20% 65%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 220 15% 20%;
+    --sidebar-primary: 200 100% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 15% 92%;
-    --sidebar-accent-foreground: 215 25% 27%;
-    --sidebar-border: 215 15% 88%;
-    --sidebar-ring: 215 20% 65%;
+    --sidebar-accent: 195 100% 95%;
+    --sidebar-accent-foreground: 200 100% 25%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 200 100% 45%;
   }
 
   .dark {
@@ -213,43 +213,43 @@
     --sidebar-ring: 0 0% 85%;
     */
 
-    /* FOURTH THEME DARK - Sophisticated Slate Professional */
-    --background: 215 30% 7%;
+    /* CURRENT THEME DARK - Vibrant Professional Dark with Colors */
+    --background: 220 25% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 215 25% 10%;
+    --card: 220 25% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 215 25% 10%;
+    --popover: 220 25% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 215 20% 75%;
-    --primary-foreground: 215 30% 7%;
+    --primary: 195 100% 60%;
+    --primary-foreground: 220 25% 8%;
 
-    --secondary: 215 20% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 195 100% 80%;
 
-    --muted: 215 20% 15%;
-    --muted-foreground: 215 10% 65%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 215 20% 15%;
-    --accent-foreground: 215 20% 75%;
+    --accent: 175 60% 20%;
+    --accent-foreground: 175 100% 75%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 20% 20%;
-    --input: 215 20% 20%;
-    --ring: 215 20% 75%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 195 100% 60%;
     
-    --sidebar-background: 215 30% 4%;
+    --sidebar-background: 220 25% 5%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 215 20% 75%;
-    --sidebar-primary-foreground: 215 30% 7%;
-    --sidebar-accent: 215 20% 12%;
-    --sidebar-accent-foreground: 215 20% 75%;
-    --sidebar-border: 215 20% 20%;
-    --sidebar-ring: 215 20% 75%;
+    --sidebar-primary: 195 100% 60%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 195 100% 80%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 195 100% 60%;
   }
 }
 
