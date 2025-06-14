@@ -24,6 +24,14 @@ const Certifications = () => {
 
   const certifications = [
     {
+      title: "Google Cloud Computing Foundations Certificate",
+      issuer: "Google",
+      date: "Jun 2024",
+      status: "No Expiration Date",
+      icon: "☁️",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
       title: "Introduction to Artificial Intelligence",
       issuer: "Infosys Springboard",
       date: "Jun 2025",
@@ -62,14 +70,6 @@ const Certifications = () => {
       status: "No Expiration Date",
       icon: "🌐",
       color: "from-orange-500 to-red-500"
-    },
-    {
-      title: "Google Cloud Computing Foundations Certificate",
-      issuer: "Google",
-      date: "Jun 2024",
-      status: "No Expiration Date",
-      icon: "☁️",
-      color: "from-yellow-500 to-orange-500"
     }
   ];
 
