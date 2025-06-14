@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
@@ -159,6 +158,10 @@ const Contact = () => {
               <h4 className="text-xl font-bold text-foreground mb-8">Send a Message</h4>
               
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                {/* Hidden fields for additional context */}
+                <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+                <input type="hidden" name="reply_to" value="" />
+                
                 <div>
                   <label htmlFor="user_name" className="block text-sm font-medium text-foreground mb-2">
                     Your Name
@@ -170,6 +173,14 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="Enter your name"
+                    onChange={(e) => {
+                      // Update the reply_to hidden field
+                      const replyToField = formRef.current?.querySelector('input[name="reply_to"]') as HTMLInputElement;
+                      if (replyToField) {
+                        const emailField = formRef.current?.querySelector('input[name="user_email"]') as HTMLInputElement;
+                        replyToField.value = emailField?.value || '';
+                      }
+                    }}
                   />
                 </div>
 
@@ -184,6 +195,13 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="Enter your email"
+                    onChange={(e) => {
+                      // Update the reply_to hidden field
+                      const replyToField = formRef.current?.querySelector('input[name="reply_to"]') as HTMLInputElement;
+                      if (replyToField) {
+                        replyToField.value = e.target.value;
+                      }
+                    }}
                   />
                 </div>
 
