@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
 
@@ -25,52 +24,28 @@ const Certifications = () => {
 
   const certifications = [
     {
-      title: "Machine Learning Specialization",
-      issuer: "Stanford University",
-      date: "Dec 2024",
-      status: "No Expiration Date",
-      icon: "🤖",
-      color: "from-blue-500 to-purple-600"
+      title: "Your Certificate Title",
+      issuer: "Issuing Organization",
+      date: "Month Year", // e.g., "Dec 2024"
+      status: "No Expiration Date", // or "Expires Month Year"
+      icon: "🏆", // Choose any emoji or use a relevant icon
+      color: "from-blue-500 to-purple-600" // Tailwind gradient colors
     },
     {
-      title: "Full Stack Web Development",
-      issuer: "Meta",
+      title: "Another Certificate",
+      issuer: "Another Organization",
       date: "Nov 2024",
-      status: "No Expiration Date", 
-      icon: "🌐",
+      status: "No Expiration Date",
+      icon: "🎓",
       color: "from-green-500 to-blue-500"
     },
     {
-      title: "Data Science with Python",
-      issuer: "IBM",
+      title: "Third Certificate",
+      issuer: "Third Organization", 
       date: "Oct 2024",
-      status: "No Expiration Date",
-      icon: "🐍",
+      status: "Expires Dec 2026",
+      icon: "⚡",
       color: "from-yellow-500 to-red-500"
-    },
-    {
-      title: "Cloud Computing Fundamentals",
-      issuer: "AWS",
-      date: "Sep 2024",
-      status: "No Expiration Date",
-      icon: "☁️",
-      color: "from-orange-500 to-pink-500"
-    },
-    {
-      title: "React Development",
-      issuer: "Meta",
-      date: "Aug 2024",
-      status: "No Expiration Date",
-      icon: "⚛️",
-      color: "from-cyan-500 to-blue-600"
-    },
-    {
-      title: "Database Management",
-      issuer: "Oracle",
-      date: "Jul 2024",
-      status: "No Expiration Date",
-      icon: "🗄️",
-      color: "from-red-500 to-purple-500"
     }
   ];
 
