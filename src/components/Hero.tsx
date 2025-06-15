@@ -79,18 +79,17 @@ const Hero = () => {
                   <Linkedin className="h-6 w-6" />
                 </a>
               </div>
-              {/* Download Resume */}
+              {/* View Resume */}
               <div className="flex items-center mt-4 sm:mt-0">
                 <a
-                  href="/resume.pdf"
-                  download
+                  href="/lovable-uploads/00a8e0c6-3d0a-48a9-9575-de6f9ca88093.png"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg text-base font-medium hover:bg-primary/90 hover:text-primary-foreground transition-all duration-200 border border-secondary/30 shadow hover:shadow-md
                   focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                  aria-label="Download Resume"
+                  aria-label="View Resume"
                 >
-                  <Download className="w-5 h-5" /> Download Resume
+                  <Download className="w-5 h-5" /> View Resume
                 </a>
               </div>
             </div>
