@@ -6,66 +6,80 @@
 
 @layer base {
   :root {
-    /* SECOND THEME - Dark Teal/Emerald Professional */
-    --background: 0 0% 100%;
-    --foreground: 210 11% 15%;
+    /* THEME 3 - Professional Purple Shades */
+    --background: 259 30% 98%;
+    --foreground: 258 60% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
-    --primary: 175 100% 35%;
+    --card-foreground: 258 60% 14%;
+    --popover: 259 35% 99%;
+    --popover-foreground: 258 60% 14%;
+
+    --primary: 265 90% 55%; /* Vibrant purple */
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 11% 15%;
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 8% 45%;
-    --accent: 175 60% 95%;
-    --accent-foreground: 175 100% 25%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 175 100% 35%;
+
+    --secondary: 259 50% 90%; /* Light lavender */
+    --secondary-foreground: 258 50% 25%;
+
+    --muted: 259 30% 90%;
+    --muted-foreground: 260 12% 45%;
+
+    --accent: 281 80% 72%; /* Soft accent purple */
+    --accent-foreground: 259 80% 20%;
+
+    --destructive: 340 82% 52%; /* Pinkish red for destructive */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 259 30% 85%;
+    --input: 259 30% 85%;
+    --ring: 265 90% 55%;
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 210 11% 15%;
-    --sidebar-primary: 175 100% 35%;
+
+    --sidebar-background: 259 40% 94%;
+    --sidebar-foreground: 258 60% 14%;
+    --sidebar-primary: 265 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 175 60% 95%;
-    --sidebar-accent-foreground: 175 100% 25%;
-    --sidebar-border: 210 20% 90%;
-    --sidebar-ring: 175 100% 35%;
+    --sidebar-accent: 281 80% 88%;
+    --sidebar-accent-foreground: 259 100% 25%;
+    --sidebar-border: 259 30% 85%;
+    --sidebar-ring: 265 90% 55%;
   }
 
   .dark {
-    /* SECOND THEME DARK - Dark Teal/Emerald Professional */
-    --background: 210 15% 8%;
-    --foreground: 0 0% 95%;
-    --card: 210 15% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 210 15% 10%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 175 100% 45%;
-    --primary-foreground: 210 15% 8%;
-    --secondary: 210 15% 15%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 210 15% 15%;
-    --muted-foreground: 210 5% 65%;
-    --accent: 210 15% 15%;
-    --accent-foreground: 175 100% 75%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 210 15% 20%;
-    --input: 210 15% 20%;
-    --ring: 175 100% 45%;
-    --sidebar-background: 210 15% 5%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 175 100% 45%;
-    --sidebar-primary-foreground: 210 15% 8%;
-    --sidebar-accent: 210 15% 12%;
-    --sidebar-accent-foreground: 175 100% 75%;
-    --sidebar-border: 210 15% 20%;
-    --sidebar-ring: 175 100% 45%;
+    /* THEME 3 DARK - Professional Purple Shades */
+    --background: 258 30% 10%;
+    --foreground: 259 50% 96%;
+    --card: 258 40% 14%;
+    --card-foreground: 259 50% 96%;
+    --popover: 258 35% 16%;
+    --popover-foreground: 259 50% 96%;
+
+    --primary: 265 90% 71%; /* Brighter purple */
+    --primary-foreground: 259 30% 10%;
+
+    --secondary: 258 40% 20%;
+    --secondary-foreground: 259 50% 96%;
+
+    --muted: 258 40% 16%;
+    --muted-foreground: 260 20% 70%;
+
+    --accent: 281 75% 72%;
+    --accent-foreground: 259 80% 16%;
+
+    --destructive: 340 80% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 258 30% 24%;
+    --input: 258 30% 24%;
+    --ring: 265 90% 71%;
+
+    --sidebar-background: 258 40% 7%;
+    --sidebar-foreground: 259 50% 96%;
+    --sidebar-primary: 265 90% 71%;
+    --sidebar-primary-foreground: 259 30% 10%;
+    --sidebar-accent: 281 50% 26%;
+    --sidebar-accent-foreground: 259 85% 76%;
+    --sidebar-border: 258 30% 24%;
+    --sidebar-ring: 265 90% 71%;
   }
 }
 
