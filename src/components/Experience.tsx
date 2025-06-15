@@ -90,7 +90,9 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/20 hover:border-primary/20 transition-all duration-300"
+              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border/20 hover:border-primary/20 transition-all duration-300
+                transform hover:scale-103 active:scale-105 focus:scale-103 cursor-pointer"
+              tabIndex={0}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="flex items-start space-x-6">

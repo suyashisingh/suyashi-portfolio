@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Github, Linkedin } from 'lucide-react';
 
@@ -81,7 +82,9 @@ const Hero = () => {
             <div className="pt-8">
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-medium hover:bg-primary/90 transition-all duration-200 border border-primary/20 shadow-lg hover:shadow-xl"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-medium hover:bg-primary/90 transition-all duration-200 border border-primary/20 shadow-lg hover:shadow-xl
+                transform transition-transform active:scale-110 hover:scale-105 focus:scale-105"
+                style={{ willChange: "transform" }}
               >
                 Contact me!
               </button>

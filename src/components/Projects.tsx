@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
 import RotatingWheel from "./RotatingWheel";
@@ -63,7 +64,8 @@ const Projects = () => {
           {projects.map((project, index) => <div key={index} className={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out ${project.featured ? 'lg:grid-cols-2' : ''}`} style={{
           transitionDelay: `${index * 200}ms`
         }}>
-              <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-border/50 overflow-hidden ${project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'}`}>
+              <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-110 focus:scale-105
+                border border-border/50 overflow-hidden ${project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'} cursor-pointer`} tabIndex={0}>
                 {project.featured}
                 
                 <div className={project.featured ? 'p-8' : ''}>
@@ -90,7 +92,10 @@ const Projects = () => {
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => <span key={techIndex} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">
+                    {project.tech.map((tech, techIndex) => <span key={techIndex} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full
+                      transition-colors duration-200 transform hover:scale-110 active:scale-115 focus:scale-110 cursor-pointer"
+                      tabIndex={0}
+                    >
                         {tech}
                       </span>)}
                   </div>

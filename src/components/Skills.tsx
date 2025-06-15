@@ -1,3 +1,4 @@
+
 import RotatingWheel from "./RotatingWheel";
 
 const Skills = () => {
@@ -36,7 +37,10 @@ const Skills = () => {
                     {skills.map((skill, index) => (
                       <span 
                         key={index}
-                        className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                        className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground
+                        transition-colors duration-200 transform hover:scale-110 active:scale-115 focus:scale-110 cursor-pointer"
+                        tabIndex={0}
+                        style={{ willChange: "transform" }}
                       >
                         {skill}
                       </span>
@@ -55,7 +59,9 @@ const Skills = () => {
                 {coursework.map((course, index) => (
                   <span 
                     key={index}
-                    className="bg-gradient-to-r from-blue-500/10 to-teal-600/10 text-foreground px-4 py-2 rounded-full font-medium border border-blue-200/20"
+                    className="bg-gradient-to-r from-blue-500/10 to-teal-600/10 text-foreground px-4 py-2 rounded-full font-medium border border-blue-200/20
+                    transition-colors duration-200 transform hover:scale-110 active:scale-115 focus:scale-110 cursor-pointer"
+                    tabIndex={0}
                   >
                     {course}
                   </span>

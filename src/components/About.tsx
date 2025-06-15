@@ -42,7 +42,10 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2
+                className="text-4xl md:text-5xl font-bold text-foreground mb-6 transition-transform transform hover:scale-105 active:scale-110 focus:scale-105 cursor-pointer inline-block"
+                tabIndex={0}
+              >
                 My Portfolio
               </h2>
             </div>
