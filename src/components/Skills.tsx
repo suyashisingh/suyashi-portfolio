@@ -1,3 +1,4 @@
+import RotatingWheel from "./RotatingWheel";
 
 const Skills = () => {
   const technicalSkills = {
@@ -12,8 +13,15 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-secondary/5">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-20 bg-secondary/5 relative overflow-hidden">
+      {/* Decorative RotatingWheel */}
+      <RotatingWheel
+        size={110}
+        opacity={0.1}
+        style={{ top: 56, right: 32, position: "absolute", zIndex: 0 }}
+        className="hidden md:block"
+      />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-foreground mb-16">Skills & Expertise</h2>
           

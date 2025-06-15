@@ -1,8 +1,8 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useToast } from '@/hooks/use-toast';
+import RotatingWheel from "./RotatingWheel";
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -68,8 +68,13 @@ const Contact = () => {
 
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-gradient-to-t from-primary/5 to-background relative overflow-hidden">
-      {/* Decorative pattern removed */}
-      {/* <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-yellow-400/20 via-transparent to-yellow-400/20 transform -skew-y-1"></div> */}
+      {/* Decorative RotatingWheel */}
+      <RotatingWheel
+        size={110}
+        opacity={0.09}
+        style={{ bottom: 40, left: 16, position: "absolute", zIndex: 0 }}
+        className="hidden md:block"
+      />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 text-center">
@@ -238,4 +243,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

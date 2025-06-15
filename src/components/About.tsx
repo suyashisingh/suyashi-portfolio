@@ -1,5 +1,6 @@
-
 import { useEffect, useRef } from 'react';
+import RotatingWheel from "./RotatingWheel";
+
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -28,8 +29,16 @@ const About = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <section ref={sectionRef} id="about" className="py-20 bg-gradient-to-b from-background to-secondary/10">
-      <div className="container mx-auto px-6">
+  return (
+    <section ref={sectionRef} id="about" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
+      {/* Decorative RotatingWheel */}
+      <RotatingWheel
+        size={140}
+        opacity={0.08}
+        style={{ top: 40, left: 24, position: "absolute", zIndex: 0 }}
+        className="hidden md:block"
+      />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out">
@@ -69,6 +78,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default About;

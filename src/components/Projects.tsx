@@ -1,6 +1,7 @@
-
 import { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
+import RotatingWheel from "./RotatingWheel";
+
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -39,8 +40,16 @@ const Projects = () => {
     featured: false,
     category: "Mobile Development"
   }];
-  return <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10">
-      <div className="container mx-auto px-6">
+  return (
+    <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
+      {/* Decorative RotatingWheel */}
+      <RotatingWheel
+        size={120}
+        opacity={0.09}
+        style={{ bottom: 20, right: 12, position: "absolute", zIndex: 0 }}
+        className="hidden md:block"
+      />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
             Things I've Worked on, Some of Them
@@ -93,6 +102,7 @@ const Projects = () => {
             </div>)}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Projects;

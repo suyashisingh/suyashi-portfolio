@@ -1,6 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
+import RotatingWheel from "./RotatingWheel";
 
 const Certifications = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -77,8 +77,15 @@ const Certifications = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-      <div className="container mx-auto px-6">
+    <section ref={sectionRef} id="certifications" className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+      {/* Decorative RotatingWheel */}
+      <RotatingWheel
+        size={100}
+        opacity={0.08}
+        style={{ top: 30, right: 18, position: "absolute", zIndex: 0 }}
+        className="hidden md:block"
+      />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4">
             Licenses & Certifications
