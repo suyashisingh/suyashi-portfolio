@@ -23,6 +23,7 @@ const Projects = () => {
     title: "NIFTY/BANKNIFTY Price Movement Predictor",
     description: "A machine learning-based system predicting price movements of NIFTY 50 and BANKNIFTY using historical data, sentiment analysis, and technical indicators. Features LSTM, XGBoost, Prophet models, with deployment options like Streamlit dashboard, FastAPI REST API, and Telegram bot notifications.",
     tech: ["Python", "LSTM", "XGBoost", "Streamlit", "FastAPI"],
+    // Use Brain icon (distinct from AI Text Detector)
     icon: <Brain className="h-6 w-6" />,
     featured: true,
     category: "Machine Learning"
@@ -61,24 +62,29 @@ const Projects = () => {
         </div>
 
         <div className="grid gap-8">
-          {projects.map((project, index) => <div key={index} className={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out ${project.featured ? 'lg:grid-cols-2' : ''}`} style={{
-          transitionDelay: `${index * 200}ms`
-        }}>
-              <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-110 focus:scale-105
-                border border-border/50 overflow-hidden ${project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'} cursor-pointer`} tabIndex={0}>
-                {/* Add the code icon on the featured project */}
-                {project.featured ? (
-                  <div className="flex items-start gap-4 p-8 pb-0">
-                    <div className="p-4 bg-primary/10 rounded-lg flex items-center justify-center" style={{ width: 56, height: 56 }}>
-                      <Code className="h-8 w-8 text-primary" />
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 ease-out"
+              style={{
+                transitionDelay: `${index * 200}ms`
+              }}
+            >
+              {/* For ALL projects: uniform format, icon left, info right, just like screenshot/example */}
+              <div className="bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-110 focus:scale-105 border border-border/50 overflow-hidden p-8 flex gap-6 items-start cursor-pointer">
+                {/* Icon box, unique per project */}
+                <div className="p-3 md:p-4 bg-primary/10 rounded-lg flex items-center justify-center" style={{ width: 56, height: 56, minWidth: 56, minHeight: 56 }}>
+                  {/* Use custom icon for featured (Brain), other for others */}
+                  {project.icon}
+                </div>
+                {/* Main info */}
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-1">{project.title}</h3>
                     </div>
-                  </div>
-                ) : null}
-                <div className={project.featured ? 'p-8 pt-0' : ''}>
-                  {!project.featured && <div className="flex items-start justify-between mb-6">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        {project.icon}
-                      </div>
+                    {/* Show action buttons (GitHub/External) only on non-featured for now */}
+                    {!project.featured && (
                       <div className="flex gap-2">
                         <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
                           <Github className="h-5 w-5 text-muted-foreground" />
@@ -87,30 +93,27 @@ const Projects = () => {
                           <ExternalLink className="h-5 w-5 text-muted-foreground" />
                         </button>
                       </div>
-                    </div>}
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => <span key={techIndex} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full
-                      transition-colors duration-200 transform hover:scale-110 active:scale-115 focus:scale-110 cursor-pointer"
-                      tabIndex={0}
-                    >
-                        {tech}
-                      </span>)}
+                    )}
                   </div>
-                  
-                  {/* REMOVE the buttons for featured project */}
-                  {project.featured && null}
+
+                  <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full transition-colors duration-200 transform hover:scale-110 active:scale-115 focus:scale-110 cursor-pointer"
+                        tabIndex={0}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Buttons for featured project were previously omitted on purpose */}
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
     </section>
