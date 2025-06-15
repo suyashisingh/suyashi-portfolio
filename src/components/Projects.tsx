@@ -23,24 +23,31 @@ const Projects = () => {
     title: "NIFTY/BANKNIFTY Price Movement Predictor",
     description: "A machine learning-based system predicting price movements of NIFTY 50 and BANKNIFTY using historical data, sentiment analysis, and technical indicators. Features LSTM, XGBoost, Prophet models, with deployment options like Streamlit dashboard, FastAPI REST API, and Telegram bot notifications.",
     tech: ["Python", "LSTM", "XGBoost", "Streamlit", "FastAPI"],
-    // Use Brain icon (distinct from AI Text Detector)
+    // Distinct icon different from AI Text Detector and mobile
     icon: <Brain className="h-6 w-6" />,
     featured: true,
-    category: "Machine Learning"
+    category: "Machine Learning",
+    // Added dummy links for demonstration; replace with real URLs if you have them
+    github: "https://github.com/yourusername/nifty-banknifty-predictor",
+    external: "https://nifty-predictor-demo.example.com"
   }, {
     title: "AI Text Detector",
     description: "An NLP project detecting AI-generated vs. human-written text using logistic regression, decision trees, and neural networks. Aims to support educators, researchers, and content creators.",
     tech: ["Python", "NLP", "TensorFlow", "Scikit-learn"],
     icon: <Code className="h-6 w-6" />,
     featured: false,
-    category: "AI/ML"
+    category: "AI/ML",
+    github: "https://github.com/yourusername/ai-text-detector",
+    external: "https://ai-text-detector-demo.example.com"
   }, {
     title: "EcoStride",
     description: "A mobile app built with Android Studio that helps users track and reduce their carbon footprint. Features eco-tips, goal tracking, and daily challenges to promote sustainable living.",
     tech: ["Android Studio", "Java", "SQLite", "Firebase"],
     icon: <Smartphone className="h-6 w-6" />,
     featured: false,
-    category: "Mobile Development"
+    category: "Mobile Development",
+    github: "https://github.com/yourusername/ecostride",
+    external: "https://ecostride-demo.example.com"
   }];
   return (
     <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">
@@ -70,11 +77,10 @@ const Projects = () => {
                 transitionDelay: `${index * 200}ms`
               }}
             >
-              {/* For ALL projects: uniform format, icon left, info right, just like screenshot/example */}
+              {/* Uniform card format */}
               <div className="bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-110 focus:scale-105 border border-border/50 overflow-hidden p-8 flex gap-6 items-start cursor-pointer">
-                {/* Icon box, unique per project */}
+                {/* Icon box */}
                 <div className="p-3 md:p-4 bg-primary/10 rounded-lg flex items-center justify-center" style={{ width: 56, height: 56, minWidth: 56, minHeight: 56 }}>
-                  {/* Use custom icon for featured (Brain), other for others */}
                   {project.icon}
                 </div>
                 {/* Main info */}
@@ -83,19 +89,32 @@ const Projects = () => {
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-1">{project.title}</h3>
                     </div>
-                    {/* Show action buttons (GitHub/External) only on non-featured for now */}
-                    {!project.featured && (
-                      <div className="flex gap-2">
-                        <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
+                    {/* Show GitHub/External links on all projects now, including NIFTY project */}
+                    <div className="flex gap-2">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 hover:bg-secondary rounded-lg transition-colors"
+                          aria-label="View GitHub repository"
+                        >
                           <Github className="h-5 w-5 text-muted-foreground" />
-                        </button>
-                        <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
+                        </a>
+                      )}
+                      {project.external && (
+                        <a
+                          href={project.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 hover:bg-secondary rounded-lg transition-colors"
+                          aria-label="Open external link"
+                        >
                           <ExternalLink className="h-5 w-5 text-muted-foreground" />
-                        </button>
-                      </div>
-                    )}
+                        </a>
+                      )}
+                    </div>
                   </div>
-
                   <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-2">
@@ -109,7 +128,6 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  {/* Buttons for featured project were previously omitted on purpose */}
                 </div>
               </div>
             </div>
