@@ -66,9 +66,15 @@ const Projects = () => {
         }}>
               <div className={`bg-card rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-110 focus:scale-105
                 border border-border/50 overflow-hidden ${project.featured ? 'grid lg:grid-cols-2 gap-0' : 'p-8'} cursor-pointer`} tabIndex={0}>
-                {project.featured}
-                
-                <div className={project.featured ? 'p-8' : ''}>
+                {/* Add the code icon on the featured project */}
+                {project.featured ? (
+                  <div className="flex items-start gap-4 p-8 pb-0">
+                    <div className="p-4 bg-primary/10 rounded-lg flex items-center justify-center" style={{ width: 56, height: 56 }}>
+                      <Code className="h-8 w-8 text-primary" />
+                    </div>
+                  </div>
+                ) : null}
+                <div className={project.featured ? 'p-8 pt-0' : ''}>
                   {!project.featured && <div className="flex items-start justify-between mb-6">
                       <div className="p-3 bg-primary/10 rounded-lg">
                         {project.icon}
@@ -111,3 +117,4 @@ const Projects = () => {
   );
 };
 export default Projects;
+
