@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Download } from 'lucide-react';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -56,26 +56,43 @@ const Hero = () => {
               Final year IT student @ MIT Manipal. Passionate about software dev, ML, and full-stack projects. Interested in secure systems, product design, and building meaningful tech experiences.
             </p>
 
-            {/* Social Links */}
-            <div className="flex space-x-6 pt-8">
-              <a
-                href="https://github.com/suyashisingh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 text-muted-foreground hover:text-primary transition-colors duration-200"
-                aria-label="GitHub"
-              >
-                <Github className="h-6 w-6" />
-              </a>
-              <a
-                href="https://linkedin.com/in/suyashisingh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 text-muted-foreground hover:text-primary transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-6 w-6" />
-              </a>
+            {/* Social & Resume Links */}
+            <div className="flex flex-col sm:flex-row sm:space-x-6 pt-8 gap-4 sm:gap-0">
+              {/* Social */}
+              <div className="flex space-x-6">
+                <a
+                  href="https://github.com/suyashisingh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 text-muted-foreground hover:text-primary transition-colors duration-200"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/suyashisingh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 text-muted-foreground hover:text-primary transition-colors duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+              </div>
+              {/* Download Resume */}
+              <div className="flex items-center mt-4 sm:mt-0">
+                <a
+                  href="/resume.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg text-base font-medium hover:bg-primary/90 hover:text-primary-foreground transition-all duration-200 border border-secondary/30 shadow hover:shadow-md
+                  focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Download Resume"
+                >
+                  <Download className="w-5 h-5" /> Download Resume
+                </a>
+              </div>
             </div>
 
             {/* CTA Button */}
