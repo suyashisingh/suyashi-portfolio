@@ -98,31 +98,6 @@ const Projects = () => {
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-1">{project.title}</h3>
                     </div>
-                    {/* Show GitHub/External links on all projects now, including NIFTY project */}
-                    <div className="flex gap-2">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 hover:bg-secondary rounded-lg transition-colors"
-                          aria-label="View GitHub repository"
-                        >
-                          <Github className="h-5 w-5 text-muted-foreground" />
-                        </a>
-                      )}
-                      {project.external && (
-                        <a
-                          href={project.external}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 hover:bg-secondary rounded-lg transition-colors"
-                          aria-label="Open external link"
-                        >
-                          <ExternalLink className="h-5 w-5 text-muted-foreground" />
-                        </a>
-                      )}
-                    </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
 
