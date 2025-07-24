@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Github, ExternalLink, Code, Brain, Smartphone } from 'lucide-react';
+import { Github, ExternalLink, Code, Brain, Smartphone, Database } from 'lucide-react';
 import RotatingWheel from "./RotatingWheel";
 
 const Projects = () => {
@@ -48,6 +48,15 @@ const Projects = () => {
     category: "Mobile Development",
     github: "https://github.com/yourusername/ecostride",
     external: "https://ecostride-demo.example.com"
+  }, {
+    title: "InDiSky – Airlines Database Management System",
+    description: "Tool to manage flights, bookings, passengers, and payments through a centralized database.",
+    tech: ["SQL", "MySQL", "ER Modelling", "Normalization", "Python", "phpMyAdmin", "XAMPP", "HTML", "PHP"],
+    icon: <Database className="h-6 w-6" />,
+    featured: false,
+    category: "Database Management",
+    github: "https://github.com/yourusername/indisky",
+    external: "https://indisky-demo.example.com"
   }];
   return (
     <section ref={sectionRef} id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/10 relative overflow-hidden">

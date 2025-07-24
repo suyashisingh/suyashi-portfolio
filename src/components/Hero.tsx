@@ -82,7 +82,7 @@ const Hero = () => {
               {/* View Resume */}
               <div className="flex items-center mt-4 sm:mt-0">
                 <a
-                  href="/lovable-uploads/00a8e0c6-3d0a-48a9-9575-de6f9ca88093.png"
+                  href="/lovable-uploads/9a5f1e31-f5ab-4942-96c6-965a120dd82a.png"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg text-base font-medium hover:bg-primary/90 hover:text-primary-foreground transition-all duration-200 border border-secondary/30 shadow hover:shadow-md
