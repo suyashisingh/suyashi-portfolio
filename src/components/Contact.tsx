@@ -102,7 +102,7 @@ const Contact = () => {
               
               <div className="space-y-6">
                 <a 
-                  href="mailto:suyasisighh@gmail.com"
+                  href="mailto:suyashisinghh@gmail.com"
                   className="flex items-center gap-4 p-4 bg-card rounded-lg hover:bg-secondary/50 transition-colors group"
                 >
                   <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -110,7 +110,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-muted-foreground">suyasisighh@gmail.com</p>
+                    <p className="text-muted-foreground">suyashisinghh@gmail.com</p>
                   </div>
                 </a>
 
